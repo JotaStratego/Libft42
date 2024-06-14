@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   main_ft_memset.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javialva <javialva@student.42barcelon      +#+  +:+       +#+        */
+/*   By: javialva <javialva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/13 20:43:33 by javialva          #+#    #+#             */
-/*   Updated: 2024/06/14 08:39:15 by javialva         ###   ########.fr       */
+/*   Created: 2024/06/14 08:28:38 by javialva          #+#    #+#             */
+/*   Updated: 2024/06/14 08:35:37 by javialva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
 #include <stddef.h>
 
-void	ft_memset(void *s, int c, size_t n)
-{
-	size_t		i;
-	unsigned char	*ptr;
+void	*ft_memset(void *s, int c, size_t n);
 
-	i = 0;
-	ptr = (unsigned char*)s;
-	while (i < n)
-	{
-		ptr[i] = (unsigned char)c;
-		i++;
-	}
+int	main(void)
+{
+	char	s[50] = "Hello world";
+	int	c = '*';
+	size_t	n = 5;
+
+	ft_memset(s, c, n);
+	printf("%s", s);
+	return (0);
 }

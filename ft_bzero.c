@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javialva <javialva@student.42barcelon      +#+  +:+       +#+        */
+/*   By: javialva <javialva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/13 20:43:33 by javialva          #+#    #+#             */
-/*   Updated: 2024/06/14 08:39:15 by javialva         ###   ########.fr       */
+/*   Created: 2024/06/14 10:28:45 by javialva          #+#    #+#             */
+/*   Updated: 2024/06/14 10:43:35 by javialva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stddef.h>
 
-void	ft_memset(void *s, int c, size_t n)
+void	bzero(void *s, size_t n)
 {
-	size_t		i;
 	unsigned char	*ptr;
+	size_t		i;
 
-	i = 0;
 	ptr = (unsigned char*)s;
+	i = 0;
 	while (i < n)
 	{
-		ptr[i] = (unsigned char)c;
+		ptr[i] = '\0';
 		i++;
 	}
 }
