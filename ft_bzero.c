@@ -6,7 +6,7 @@
 /*   By: javialva <javialva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 10:28:45 by javialva          #+#    #+#             */
-/*   Updated: 2024/06/14 10:43:35 by javialva         ###   ########.fr       */
+/*   Updated: 2024/06/14 20:34:46 by javialva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void	bzero(void *s, size_t n)
 {
 	unsigned char	*ptr;
-	size_t		i;
+	size_t			i;
 
-	ptr = (unsigned char*)s;
+	ptr = (unsigned char *) s;
 	i = 0;
 	while (i < n)
 	{

@@ -6,13 +6,13 @@
 #    By: javialva <javialva@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/13 18:28:36 by javialva          #+#    #+#              #
-#    Updated: 2024/06/13 20:38:32 by javialva         ###   ########.fr        #
+#    Updated: 2024/06/14 12:12:34 by javialva         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=libft.a
 CFLAGS=-Werror -Wall -Wextra
-M_DIR=/home/javialva/Desktop/Libft/main
+M_DIR=/home/jota/Documentos/Libft/main
 CFILES=ft_isalpha.c
 ISALPHA_FILES=ft_isalpha.c $(M_DIR)/main_ft_isalpha.c
 ISALPHA_OBJECTS=$(ISALPHA_FILES:.c=.o)
@@ -26,6 +26,12 @@ ISPRINT_FILES=ft_isprint.c $(M_DIR)/main_ft_isprint.c
 ISPRINT_OBJECTS=$(ISPRINT_FILES:.c=.o)
 STRLEN_FILES=ft_strlen.c $(M_DIR)/main_ft_strlen.c
 STRLEN_OBJECTS=$(STRLEN_FILES:.c=.o)
+MEMSET_FILES=ft_memset.c $(M_DIR)/main_ft_memset.c
+MEMSET_OBJECTS=$(MEMSET_FILES:.c=.o)
+BZERO_FILES=ft_bzero.c $(M_DIR)/main_ft_bzero.c
+BZERO_OBJECTS=$(BZERO_FILES:.c=.o)
+MEMCPY_FILES=ft_memcpy.c $(M_DIR)/main_ft_memcpy.c
+MEMCPY_OBJECTS=$(MEMCPY_FILES:.c=.o)
 OBJECTS=$(CFILES:.c=.o)
 
 all: $(NAME)
@@ -54,10 +60,20 @@ isprint: $(ISPRINT_OBJECTS)
 strlen: $(STRLEN_OBJECTS)
 	gcc $(CFLAGS) -o strlen $(STRLEN_OBJECTS)
 
+memset: $(MEMSET_OBJECTS)
+	gcc $(CFLAGS) -o memset $(MEMSET_OBJECTS)
+
+bzero: $(BZERO_OBJECTS)
+	gcc $(CFLAGS) -o bzero $(BZERO_OBJECTS)
+
+memcpy: $(MEMCPY_OBJECTS)
+	gcc $(CFLAGS) -o memcpy $(MEMCPY_OBJECTS)
+
 clean:
 	rm -f *.o $(M_DIR)/*.o
 
 fclean: clean
 	rm -f $(NAME) isalpha isdigit isalnum isascii isprint strlen \
+	memset bzero memcpy
 
 re: fclean all
