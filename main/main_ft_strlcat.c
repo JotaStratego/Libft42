@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   main_ft_strlcat.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: javialva <javialva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/16 22:53:14 by javialva          #+#    #+#             */
-/*   Updated: 2024/06/17 01:28:44 by javialva         ###   ########.fr       */
+/*   Created: 2024/06/16 23:59:50 by javialva          #+#    #+#             */
+/*   Updated: 2024/06/17 00:55:40 by javialva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include <stdio.h>
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t n)
+size_t	ft_strlcat(char *dest, const char *src, size_t n);
+
+int	main(void)
 {
-	size_t	i;
+	size_t	n = 30;
+	char	dest[30] = "hola ";
+	const char	*src = "mundo";
 	size_t	len;
 
-	i = 0;
-	len = 0;
-	while (src[len] != '\0')
-		len++;
-	if (n == 0)
-		return (len);
-	while (src[i] != '\0' && i < n - 1)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (len);
+	printf("La cadena dest antes de funcion es: %s\n", dest);	
+	len = ft_strlcat(dest, src, n);
+	printf("La longitud de dest es: %ld\n", len);
+	printf("La cadena concatenada tras la funcion es: %s", dest);
+	return (0);
 }

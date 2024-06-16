@@ -6,7 +6,7 @@
 #    By: javialva <javialva@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/13 18:28:36 by javialva          #+#    #+#              #
-#    Updated: 2024/06/16 23:55:28 by javialva         ###   ########.fr        #
+#    Updated: 2024/06/17 00:44:01 by javialva         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,8 @@ MEMMOVE_FILES=ft_memmove.c $(M_DIR)/main_ft_memmove.c
 MEMMOVE_OBJECTS=$(MEMMOVE_FILES:.c=.o)
 STRLCPY_FILES=ft_strlcpy.c $(M_DIR)/main_ft_strlcpy.c
 STRLCPY_OBJECTS=$(STRLCPY_FILES:.c=.o)
+STRLCAT_FILES=ft_strlcat.c $(M_DIR)/main_ft_strlcat.c
+STRLCAT_OBJECTS=$(STRLCAT_FILES:.c=.o)
 OBJECTS=$(CFILES:.c=.o)
 
 all: $(NAME)
@@ -79,11 +81,14 @@ memmove: $(MEMMOVE_OBJECTS)
 strlcpy: $(STRLCPY_OBJECTS)
 	gcc $(CFLAGS) -o strlcpy $(STRLCPY_OBJECTS)
 
+strlcat: $(STRLCAT_OBJECTS)
+	gcc $(CFLAGS) -o strlcat $(STRLCAT_OBJECTS)
+
 clean:
 	rm -f *.o $(M_DIR)/*.o
 
 fclean: clean
 	rm -f $(NAME) isalpha isdigit isalnum isascii isprint strlen \
-	memset bzero memcpy memmove strlcpy
+	memset bzero memcpy memmove strlcpy strlcat
 
 re: fclean all

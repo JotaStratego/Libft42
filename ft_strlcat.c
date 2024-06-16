@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: javialva <javialva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/16 22:53:14 by javialva          #+#    #+#             */
-/*   Updated: 2024/06/17 01:28:44 by javialva         ###   ########.fr       */
+/*   Created: 2024/06/16 23:59:00 by javialva          #+#    #+#             */
+/*   Updated: 2024/06/17 01:36:55 by javialva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <stddef.h>
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t n)
+size_t	ft_strlcat(char *dest, const char *src, size_t n)
 {
 	size_t	i;
-	size_t	len;
+	size_t	lend;
+	size_t	lens;
 
 	i = 0;
-	len = 0;
-	while (src[len] != '\0')
-		len++;
-	if (n == 0)
-		return (len);
-	while (src[i] != '\0' && i < n - 1)
+	lend = 0;
+	lens = 0;
+	while (dest[lend] != '\0')
+		lend++;
+	while (src[lens] != '\0')
+		lens++;
+	if (n <= lend)
+		return (lend + lens);
+	while (src[i] != '\0' && i < (n - lend - 1))
 	{
-		dest[i] = src[i];
+		dest[lend + i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
-	return (len);
+	dest[lend + i] = '\0';
+	return (lend + lens);
 }
