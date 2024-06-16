@@ -6,7 +6,7 @@
 #    By: javialva <javialva@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/13 18:28:36 by javialva          #+#    #+#              #
-#    Updated: 2024/06/14 12:12:34 by javialva         ###   ########.fr        #
+#    Updated: 2024/06/16 11:59:10 by javialva         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,8 @@ BZERO_FILES=ft_bzero.c $(M_DIR)/main_ft_bzero.c
 BZERO_OBJECTS=$(BZERO_FILES:.c=.o)
 MEMCPY_FILES=ft_memcpy.c $(M_DIR)/main_ft_memcpy.c
 MEMCPY_OBJECTS=$(MEMCPY_FILES:.c=.o)
+MEMMOVE_FILES=ft_memmove.c $(M_DIR)/main_ft_memmove.c
+MEMMOVE_OBJECTS=$(MEMMOVE_FILES:.c=.o)
 OBJECTS=$(CFILES:.c=.o)
 
 all: $(NAME)
@@ -69,11 +71,14 @@ bzero: $(BZERO_OBJECTS)
 memcpy: $(MEMCPY_OBJECTS)
 	gcc $(CFLAGS) -o memcpy $(MEMCPY_OBJECTS)
 
+memmove: $(MEMMOVE_OBJECTS)
+	gcc $(CFLAGS) -o memmove $(MEMMOVE_OBJECTS)
+
 clean:
 	rm -f *.o $(M_DIR)/*.o
 
 fclean: clean
 	rm -f $(NAME) isalpha isdigit isalnum isascii isprint strlen \
-	memset bzero memcpy
+	memset bzero memcpy memmove
 
 re: fclean all
