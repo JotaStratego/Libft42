@@ -6,7 +6,7 @@
 #    By: javialva <javialva@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/13 18:28:36 by javialva          #+#    #+#              #
-#    Updated: 2024/06/17 01:54:18 by javialva         ###   ########.fr        #
+#    Updated: 2024/06/17 10:52:50 by javialva         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,10 @@ TOUPPER_FILES=ft_toupper.c $(M_DIR)/main_ft_toupper.c
 TOUPPER_OBJECTS=$(TOUPPER_FILES:.c=.o)
 TOLOWER_FILES=ft_tolower.c $(M_DIR)/main_ft_tolower.c
 TOLOWER_OBJECTS=$(TOLOWER_FILES:.c=.o)
+STRCHR_FILES=ft_strchr.c $(M_DIR)/main_ft_strchr.c
+STRCHR_OBJECTS=$(STRCHR_FILES:.c=.o)
+STRRCHR_FILES=ft_strrchr.c $(M_DIR)/main_ft_strrchr.c
+STRRCHR_OBJECTS=$(STRRCHR_FILES:.c=.o)
 OBJECTS=$(CFILES:.c=.o)
 
 all: $(NAME)
@@ -94,11 +98,18 @@ toupper: $(TOUPPER_OBJECTS)
 tolower: $(TOLOWER_OBJECTS)
 	gcc $(CFLAGS) -o tolower $(TOLOWER_OBJECTS)
 
+strchr: $(STRCHR_OBJECTS)
+	gcc $(CFLAGS) -o strchr $(STRCHR_OBJECTS)
+
+strrchr: $(STRRCH_OBJECTS)
+	gcc $(CFLAGS) -o strrchr $(STRRCHR_OBJECTS)
+
 clean:
 	rm -f *.o $(M_DIR)/*.o
 
 fclean: clean
 	rm -f $(NAME) isalpha isdigit isalnum isascii isprint strlen \
 	memset bzero memcpy memmove strlcpy strlcat toupper tolower \
+	strchr strrchr
 
 re: fclean all
