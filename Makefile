@@ -6,7 +6,7 @@
 #    By: javialva <javialva@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/13 18:28:36 by javialva          #+#    #+#              #
-#    Updated: 2024/06/17 10:52:50 by javialva         ###   ########.fr        #
+#    Updated: 2024/06/17 11:15:51 by javialva         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -101,7 +101,7 @@ tolower: $(TOLOWER_OBJECTS)
 strchr: $(STRCHR_OBJECTS)
 	gcc $(CFLAGS) -o strchr $(STRCHR_OBJECTS)
 
-strrchr: $(STRRCH_OBJECTS)
+strrchr: $(STRRCHR_OBJECTS)
 	gcc $(CFLAGS) -o strrchr $(STRRCHR_OBJECTS)
 
 clean:
