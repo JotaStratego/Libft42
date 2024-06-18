@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javialva <javialva@student.42.fr>          +#+  +:+       +#+        */
+/*   By: javialva <javialva@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/17 11:55:26 by javialva          #+#    #+#             */
-/*   Updated: 2024/06/18 20:45:30 by javialva         ###   ########.fr       */
+/*   Created: 2024/06/18 20:30:51 by javialva          #+#    #+#             */
+/*   Updated: 2024/06/18 20:59:55 by javialva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stddef.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
+	char	*str1;
+	char	*str2;
 	size_t	i;
 
+	str1 = (char *) s1;
+	str2 = (char *) s2;
 	i = 0;
-	while (s1[i] != '\0' && s2[i] != '\0' && i < n)
+	while (str1[i] != '\0' && str2[i] != '\0' && i < n)
 	{
-		if (!(s1[i] == s2[i]))
-			return (s1[i] - s2[i]);
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
 		i++;
 	}
-	return (s1[i] - s2[i]);
+	return (str1[i] - str2[i]);
 }

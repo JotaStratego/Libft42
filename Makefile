@@ -6,13 +6,13 @@
 #    By: javialva <javialva@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/13 18:28:36 by javialva          #+#    #+#              #
-#    Updated: 2024/06/17 11:15:51 by javialva         ###   ########.fr        #
+#    Updated: 2024/06/18 21:01:47 by javialva         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=libft.a
 CFLAGS=-Werror -Wall -Wextra
-M_DIR=/home/jota/Documentos/Libft/main
+M_DIR=/home/javialva/Desktop/Libft/main
 CFILES=ft_isalpha.c
 ISALPHA_FILES=ft_isalpha.c $(M_DIR)/main_ft_isalpha.c
 ISALPHA_OBJECTS=$(ISALPHA_FILES:.c=.o)
@@ -46,6 +46,12 @@ STRCHR_FILES=ft_strchr.c $(M_DIR)/main_ft_strchr.c
 STRCHR_OBJECTS=$(STRCHR_FILES:.c=.o)
 STRRCHR_FILES=ft_strrchr.c $(M_DIR)/main_ft_strrchr.c
 STRRCHR_OBJECTS=$(STRRCHR_FILES:.c=.o)
+STRNCMP_FILES=ft_strncmp.c $(M_DIR)/main_ft_strncmp.c
+STRNCMP_OBJECTS=$(STRNCMP_FILES:.c=.o)
+MEMCHR_FILES=ft_memchr.c $(M_DIR)/main_ft_memchr.c
+MEMCHR_OBJECTS=$(MEMCHR_FILES:.c=.o)
+MEMCMP_FILES=ft_memcmp.c $(M_DIR)/main_ft_memcmp.c
+MEMCMP_OBJECTS=$(MEMCMP_FILES:.c=.o)
 OBJECTS=$(CFILES:.c=.o)
 
 all: $(NAME)
@@ -104,12 +110,21 @@ strchr: $(STRCHR_OBJECTS)
 strrchr: $(STRRCHR_OBJECTS)
 	gcc $(CFLAGS) -o strrchr $(STRRCHR_OBJECTS)
 
+strncmp: $(STRNCMP_OBJECTS)
+	gcc $(CFLAGS) -o strncmp $(STRNCMP_OBJECTS)
+
+memchr: $(MEMCHR_OBJECTS)
+	gcc $(CFLAGS) -o memchr $(MEMCHR_OBJECTS)
+
+memcmp: $(MEMCMP_OBJECTS)
+	gcc $(CFLAGS) -o memcmp $(MEMCMP_OBJECTS)
+
 clean:
 	rm -f *.o $(M_DIR)/*.o
 
 fclean: clean
 	rm -f $(NAME) isalpha isdigit isalnum isascii isprint strlen \
 	memset bzero memcpy memmove strlcpy strlcat toupper tolower \
-	strchr strrchr
+	strchr strrchr strncmp memchr memcmp
 
 re: fclean all
