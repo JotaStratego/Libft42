@@ -6,7 +6,7 @@
 #    By: javialva <javialva@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/13 18:28:36 by javialva          #+#    #+#              #
-#    Updated: 2024/06/19 19:32:33 by javialva         ###   ########.fr        #
+#    Updated: 2024/06/19 23:54:14 by javialva         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,8 @@ MEMCMP_FILES=ft_memcmp.c $(M_DIR)/main_ft_memcmp.c
 MEMCMP_OBJECTS=$(MEMCMP_FILES:.c=.o)
 STRNSTR_FILES=ft_strnstr.c $(M_DIR)/main_ft_strnstr.c
 STRNSTR_OBJECTS=$(STRNSTR_FILES:.c=.o)
+ATOI_FILES=ft_atoi.c $(M_DIR)/main_ft_atoi.c
+ATOI_OBJECTS=$(ATOI_FILES:.c=.o)
 OBJECTS=$(CFILES:.c=.o)
 
 all: $(NAME)
@@ -124,12 +126,15 @@ memcmp: $(MEMCMP_OBJECTS)
 strnstr: $(STRNSTR_OBJECTS)
 	gcc $(CFLAGS) -o strnstr $(STRNSTR_OBJECTS)
 
+atoi: $(ATOI_OBJECTS)
+	gcc $(CFLAGS) -o atoi $(ATOI_OBJECTS)
+
 clean:
 	rm -f *.o $(M_DIR)/*.o
 
 fclean: clean
 	rm -f $(NAME) isalpha isdigit isalnum isascii isprint strlen \
 	memset bzero memcpy memmove strlcpy strlcat toupper tolower \
-	strchr strrchr strncmp memchr memcmp strnstr
+	strchr strrchr strncmp memchr memcmp strnstr atoi
 
 re: fclean all
