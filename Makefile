@@ -6,13 +6,13 @@
 #    By: javialva <javialva@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/13 18:28:36 by javialva          #+#    #+#              #
-#    Updated: 2024/06/19 23:54:14 by javialva         ###   ########.fr        #
+#    Updated: 2024/06/20 12:13:58 by javialva         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=libft.a
 CFLAGS=-Werror -Wall -Wextra
-M_DIR=/home/jota/Documentos/Libft/main
+M_DIR=/home/javialva/Desktop/Libft/main
 CFILES=ft_isalpha.c
 ISALPHA_FILES=ft_isalpha.c $(M_DIR)/main_ft_isalpha.c
 ISALPHA_OBJECTS=$(ISALPHA_FILES:.c=.o)
@@ -56,6 +56,10 @@ STRNSTR_FILES=ft_strnstr.c $(M_DIR)/main_ft_strnstr.c
 STRNSTR_OBJECTS=$(STRNSTR_FILES:.c=.o)
 ATOI_FILES=ft_atoi.c $(M_DIR)/main_ft_atoi.c
 ATOI_OBJECTS=$(ATOI_FILES:.c=.o)
+CALLOC_FILES=ft_calloc.c $(M_DIR)/main_ft_calloc.c
+CALLOC_OBJECTS=$(CALLOC_FILES:.c=.o)
+STRDUP_FILES=ft_strdup.c $(M_DIR)/main_ft_strdup.c
+STRDUP_OBJECTS=$(STRDUP_FILES:.c=.o)
 OBJECTS=$(CFILES:.c=.o)
 
 all: $(NAME)
@@ -129,12 +133,19 @@ strnstr: $(STRNSTR_OBJECTS)
 atoi: $(ATOI_OBJECTS)
 	gcc $(CFLAGS) -o atoi $(ATOI_OBJECTS)
 
+calloc: $(CALLOC_OBJECTS)
+	gcc $(CFLAGS) -o calloc $(CALLOC_OBJECTS)
+
+strdup: $(STRDUP_OBJECTS)
+	gcc $(CFLAGS) -o strdup $(STRDUP_OBJECTS)
+
 clean:
 	rm -f *.o $(M_DIR)/*.o
 
 fclean: clean
 	rm -f $(NAME) isalpha isdigit isalnum isascii isprint strlen \
 	memset bzero memcpy memmove strlcpy strlcat toupper tolower \
-	strchr strrchr strncmp memchr memcmp strnstr atoi
+	strchr strrchr strncmp memchr memcmp strnstr atoi calloc \
+	strdup
 
 re: fclean all
