@@ -6,13 +6,13 @@
 #    By: javialva <javialva@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/13 18:28:36 by javialva          #+#    #+#              #
-#    Updated: 2024/06/20 12:13:58 by javialva         ###   ########.fr        #
+#    Updated: 2024/06/20 17:16:58 by javialva         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=libft.a
 CFLAGS=-Werror -Wall -Wextra
-M_DIR=/home/javialva/Desktop/Libft/main
+M_DIR=/home/jota/Documentos/Libft/main
 CFILES=ft_isalpha.c
 ISALPHA_FILES=ft_isalpha.c $(M_DIR)/main_ft_isalpha.c
 ISALPHA_OBJECTS=$(ISALPHA_FILES:.c=.o)
@@ -60,6 +60,8 @@ CALLOC_FILES=ft_calloc.c $(M_DIR)/main_ft_calloc.c
 CALLOC_OBJECTS=$(CALLOC_FILES:.c=.o)
 STRDUP_FILES=ft_strdup.c $(M_DIR)/main_ft_strdup.c
 STRDUP_OBJECTS=$(STRDUP_FILES:.c=.o)
+STRJOIN_FILES=ft_strjoin.c $(M_DIR)/main_ft_strjoin.c
+STRJOIN_OBJECTS=$(STRJOIN_FILES:.c=.o)
 OBJECTS=$(CFILES:.c=.o)
 
 all: $(NAME)
@@ -139,6 +141,9 @@ calloc: $(CALLOC_OBJECTS)
 strdup: $(STRDUP_OBJECTS)
 	gcc $(CFLAGS) -o strdup $(STRDUP_OBJECTS)
 
+strjoin: $(STRJOIN_OBJECTS)
+	gcc $(CFLAGS) -o strjoin $(STRJOIN_OBJECTS)
+
 clean:
 	rm -f *.o $(M_DIR)/*.o
 
@@ -146,6 +151,6 @@ fclean: clean
 	rm -f $(NAME) isalpha isdigit isalnum isascii isprint strlen \
 	memset bzero memcpy memmove strlcpy strlcat toupper tolower \
 	strchr strrchr strncmp memchr memcmp strnstr atoi calloc \
-	strdup
+	strdup strjoin
 
 re: fclean all
