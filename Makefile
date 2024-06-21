@@ -6,7 +6,7 @@
 #    By: javialva <javialva@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/13 18:28:36 by javialva          #+#    #+#              #
-#    Updated: 2024/06/20 17:16:58 by javialva         ###   ########.fr        #
+#    Updated: 2024/06/21 10:16:07 by javialva         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,6 +62,8 @@ STRDUP_FILES=ft_strdup.c $(M_DIR)/main_ft_strdup.c
 STRDUP_OBJECTS=$(STRDUP_FILES:.c=.o)
 STRJOIN_FILES=ft_strjoin.c $(M_DIR)/main_ft_strjoin.c
 STRJOIN_OBJECTS=$(STRJOIN_FILES:.c=.o)
+STRTRIM_FILES=ft_strtrim.c $(M_DIR)/main_ft_strtrim.c
+STRTRIM_OBJECTS=$(STRTRIM_FILES:.c=.o)
 OBJECTS=$(CFILES:.c=.o)
 
 all: $(NAME)
@@ -144,6 +146,9 @@ strdup: $(STRDUP_OBJECTS)
 strjoin: $(STRJOIN_OBJECTS)
 	gcc $(CFLAGS) -o strjoin $(STRJOIN_OBJECTS)
 
+strtrim: $(STRTRIM_OBJECTS)
+	gcc $(CFLAGS) -o strtrim $(STRTRIM_OBJECTS)
+
 clean:
 	rm -f *.o $(M_DIR)/*.o
 
@@ -151,6 +156,6 @@ fclean: clean
 	rm -f $(NAME) isalpha isdigit isalnum isascii isprint strlen \
 	memset bzero memcpy memmove strlcpy strlcat toupper tolower \
 	strchr strrchr strncmp memchr memcmp strnstr atoi calloc \
-	strdup strjoin
+	strdup strjoin strtrim
 
 re: fclean all
