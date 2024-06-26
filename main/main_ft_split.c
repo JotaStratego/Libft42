@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   main_ft_split.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: javialva <javialva@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/13 20:08:08 by javialva          #+#    #+#             */
-/*   Updated: 2024/06/26 18:37:13 by javialva         ###   ########.fr       */
+/*   Created: 2024/06/26 21:38:14 by javialva          #+#    #+#             */
+/*   Updated: 2024/06/26 21:52:35 by javialva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
+#include <stdlib.h>
 
-int	ft_isprint(int c)
+char	**ft_split(char const *s, char c);
+
+int	main(void)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	else
-		return (0);
+	const char	*s = "  Hola a todo el mundo!";
+	char	c = ' ';
+	char	**array;
+	int	i = 0;
+
+	array = ft_split(s, c);
+	while (array[i] != NULL)
+	{
+		printf("%s\n", array[i]);
+		i++;
+	}
+	return (0);
 }

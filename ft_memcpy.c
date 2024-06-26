@@ -6,11 +6,10 @@
 /*   By: javialva <javialva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 11:58:10 by javialva          #+#    #+#             */
-/*   Updated: 2024/06/14 20:41:22 by javialva         ###   ########.fr       */
+/*   Updated: 2024/06/26 20:41:16 by javialva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

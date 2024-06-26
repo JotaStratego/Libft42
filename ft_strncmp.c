@@ -6,10 +6,10 @@
 /*   By: javialva <javialva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 11:55:26 by javialva          #+#    #+#             */
-/*   Updated: 2024/06/18 20:45:30 by javialva         ###   ########.fr       */
+/*   Updated: 2024/06/26 20:44:46 by javialva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

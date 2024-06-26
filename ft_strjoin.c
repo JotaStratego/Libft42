@@ -6,13 +6,12 @@
 /*   By: javialva <javialva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 16:26:18 by javialva          #+#    #+#             */
-/*   Updated: 2024/06/20 17:21:07 by javialva         ###   ########.fr       */
+/*   Updated: 2024/06/26 20:43:26 by javialva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
-int	total_len(int i, int len, const char *s1, const char *s2)
+static int	total_len(int i, int len, const char *s1, const char *s2)
 {
 	while (s1[len] != '\0')
 		len++;

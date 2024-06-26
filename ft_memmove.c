@@ -6,10 +6,10 @@
 /*   By: javialva <javialva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 20:43:43 by javialva          #+#    #+#             */
-/*   Updated: 2024/06/16 22:41:46 by javialva         ###   ########.fr       */
+/*   Updated: 2024/06/26 20:41:38 by javialva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

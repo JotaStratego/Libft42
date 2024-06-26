@@ -6,10 +6,10 @@
 /*   By: javialva <javialva@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 20:43:33 by javialva          #+#    #+#             */
-/*   Updated: 2024/06/14 20:41:48 by javialva         ###   ########.fr       */
+/*   Updated: 2024/06/26 20:42:01 by javialva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include "libft.h"
 
 void	ft_memset(void *s, int c, size_t n)
 {

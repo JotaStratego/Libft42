@@ -6,10 +6,10 @@
 /*   By: javialva <javialva@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 20:30:51 by javialva          #+#    #+#             */
-/*   Updated: 2024/06/18 20:59:55 by javialva         ###   ########.fr       */
+/*   Updated: 2024/06/26 20:40:58 by javialva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

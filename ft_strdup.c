@@ -6,12 +6,10 @@
 /*   By: javialva <javialva@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 11:54:53 by javialva          #+#    #+#             */
-/*   Updated: 2024/06/20 12:24:15 by javialva         ###   ########.fr       */
+/*   Updated: 2024/06/26 20:43:05 by javialva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {

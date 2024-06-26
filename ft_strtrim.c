@@ -6,10 +6,10 @@
 /*   By: javialva <javialva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 17:34:18 by javialva          #+#    #+#             */
-/*   Updated: 2024/06/21 10:21:56 by javialva         ###   ########.fr       */
+/*   Updated: 2024/06/26 20:45:45 by javialva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+#include "libft.h"
 
 static int	ft_removing_chars(char s, char const *set)
 {
@@ -25,7 +25,7 @@ static int	ft_removing_chars(char s, char const *set)
 	return (0);
 }
 
-int	ft_strlen(const char *str)
+static int	len(const char *str)
 {
 	int	i;
 
@@ -45,7 +45,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	while (s1[start] && ft_removing_chars(s1[start], set))
 		start++;
-	end = ft_strlen(s1);
+	end = len(s1);
 	while (end > start && ft_removing_chars(s1[end - 1], set))
 		end--;
 	result = (char *)malloc((end - start) * sizeof(s1));

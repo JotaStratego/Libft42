@@ -6,10 +6,10 @@
 /*   By: javialva <javialva@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 12:27:18 by javialva          #+#    #+#             */
-/*   Updated: 2024/06/20 13:46:09 by javialva         ###   ########.fr       */
+/*   Updated: 2024/06/26 20:46:02 by javialva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

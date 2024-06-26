@@ -6,11 +6,10 @@
 /*   By: javialva <javialva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 22:53:14 by javialva          #+#    #+#             */
-/*   Updated: 2024/06/17 01:28:44 by javialva         ###   ########.fr       */
+/*   Updated: 2024/06/26 21:37:53 by javialva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stddef.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t n)
 {

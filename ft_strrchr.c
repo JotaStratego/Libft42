@@ -6,12 +6,12 @@
 /*   By: javialva <javialva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 11:03:49 by javialva          #+#    #+#             */
-/*   Updated: 2024/06/17 11:50:17 by javialva         ###   ########.fr       */
+/*   Updated: 2024/06/26 20:45:26 by javialva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include "libft.h"
 
-int	ft_count(const char *s, int c)
+static int	ft_count(const char *s, int c)
 {
 	int	i;
 	int	count;

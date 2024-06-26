@@ -6,12 +6,12 @@
 /*   By: javialva <javialva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 10:04:13 by javialva          #+#    #+#             */
-/*   Updated: 2024/06/17 11:03:08 by javialva         ###   ########.fr       */
+/*   Updated: 2024/06/26 20:42:38 by javialva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include "libft.h"
 
-char	*strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
