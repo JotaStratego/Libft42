@@ -6,7 +6,7 @@
 #    By: javialva <javialva@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/13 18:28:36 by javialva          #+#    #+#              #
-#    Updated: 2024/06/28 13:13:10 by javialva         ###   ########.fr        #
+#    Updated: 2024/06/28 14:08:00 by javialva         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRC=ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
 ft_memmove.c ft_memset.c ft_split.c ft_strchr.c ft_strdup.c ft_strjoin.c \
 ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c \
-ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
+ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c ft_striteri.c \
 ISALPHA_FILES=ft_isalpha.c $(M_DIR)/main_ft_isalpha.c
 ISALPHA_OBJECTS=$(ISALPHA_FILES:.c=.o)
 ISDIGIT_FILES=ft_isdigit.c $(M_DIR)/main_ft_isdigit.c
@@ -74,6 +74,8 @@ ITOA_FILES=ft_itoa.c $(M_DIR)/main_ft_itoa.c
 ITOA_OBJECTS=$(ITOA_FILES:.c=.o)
 STRMAPI_FILES=ft_strlcpy.c ft_strlen.c ft_strmapi.c $(M_DIR)/main_ft_strmapi.c
 STRMAPI_OBJECTS=$(STRMAPI_FILES:.c=.o)
+STRITERI_FILES=ft_striteri.c $(M_DIR)/main_ft_striteri.c
+STRITERI_OBJECTS=$(STRITERI_FILES:.c=.o)
 OBJECTS=$(SRC:.c=.o)
 
 all: $(NAME)
@@ -168,6 +170,9 @@ itoa: $(ITOA_OBJECTS)
 strmapi: $(STRMAPI_OBJECTS)
 	gcc $(CFLAGS) -o strmapi $(STRMAPI_OBJECTS)
 
+striteri: 
+	gcc $(STRITERI_FILES) -o striteri 
+
 clean:
 	rm -f *.o $(M_DIR)/*.o
 
@@ -175,6 +180,6 @@ fclean: clean
 	rm -f $(NAME) isalpha isdigit isalnum isascii isprint strlen \
 	memset bzero memcpy memmove strlcpy strlcat toupper tolower \
 	strchr strrchr strncmp memchr memcmp strnstr atoi calloc \
-	strdup strjoin strtrim split itoa strmapi
+	strdup strjoin strtrim split itoa strmapi striteri
 
 re: fclean all
