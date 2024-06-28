@@ -6,14 +6,18 @@
 #    By: javialva <javialva@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/13 18:28:36 by javialva          #+#    #+#              #
-#    Updated: 2024/06/28 01:46:28 by javialva         ###   ########.fr        #
+#    Updated: 2024/06/28 13:13:10 by javialva         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=libft.a
 CFLAGS=-Werror -Wall -Wextra
-M_DIR=/home/jota/Documentos/Libft/main
-CFILES=ft_isalpha.c
+M_DIR=/home/javialva/Desktop/Libft/main
+SRC=ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
+ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
+ft_memmove.c ft_memset.c ft_split.c ft_strchr.c ft_strdup.c ft_strjoin.c \
+ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c \
+ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
 ISALPHA_FILES=ft_isalpha.c $(M_DIR)/main_ft_isalpha.c
 ISALPHA_OBJECTS=$(ISALPHA_FILES:.c=.o)
 ISDIGIT_FILES=ft_isdigit.c $(M_DIR)/main_ft_isdigit.c
@@ -68,7 +72,9 @@ SPLIT_FILES=ft_strlcpy.c ft_split.c $(M_DIR)/main_ft_split.c
 SPLIT_OBJECTS=$(SPLIT_FILES:.c=.o)
 ITOA_FILES=ft_itoa.c $(M_DIR)/main_ft_itoa.c
 ITOA_OBJECTS=$(ITOA_FILES:.c=.o)
-OBJECTS=$(CFILES:.c=.o)
+STRMAPI_FILES=ft_strlcpy.c ft_strlen.c ft_strmapi.c $(M_DIR)/main_ft_strmapi.c
+STRMAPI_OBJECTS=$(STRMAPI_FILES:.c=.o)
+OBJECTS=$(SRC:.c=.o)
 
 all: $(NAME)
 
@@ -159,6 +165,9 @@ split: $(SPLIT_OBJECTS)
 itoa: $(ITOA_OBJECTS)
 	gcc $(CFLAGS) -o itoa $(ITOA_OBJECTS)
 
+strmapi: $(STRMAPI_OBJECTS)
+	gcc $(CFLAGS) -o strmapi $(STRMAPI_OBJECTS)
+
 clean:
 	rm -f *.o $(M_DIR)/*.o
 
@@ -166,6 +175,6 @@ fclean: clean
 	rm -f $(NAME) isalpha isdigit isalnum isascii isprint strlen \
 	memset bzero memcpy memmove strlcpy strlcat toupper tolower \
 	strchr strrchr strncmp memchr memcmp strnstr atoi calloc \
-	strdup strjoin strtrim split itoa
+	strdup strjoin strtrim split itoa strmapi
 
 re: fclean all
