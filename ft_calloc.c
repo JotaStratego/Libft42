@@ -6,9 +6,10 @@
 /*   By: javialva <javialva@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 09:44:19 by javialva          #+#    #+#             */
-/*   Updated: 2024/06/26 20:40:11 by javialva         ###   ########.fr       */
+/*   Updated: 2024/07/03 00:29:48 by javialva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+/* Assign dinamic memory to a string with 0 values. */
 #include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
@@ -33,3 +34,18 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	}
 	return (p);
 }
+
+/*
+int	main(void)
+{
+	int	*ptr;
+
+	ptr = (int *)ft_calloc(20, sizeof(int));
+	if (ptr == NULL)
+		return (1);
+	for(int i = 0; i < 20; i++)
+		printf("%d", ptr[i]);
+	free(ptr);
+	return (0);
+}
+*/

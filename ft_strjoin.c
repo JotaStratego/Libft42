@@ -6,9 +6,10 @@
 /*   By: javialva <javialva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 16:26:18 by javialva          #+#    #+#             */
-/*   Updated: 2024/06/26 20:43:26 by javialva         ###   ########.fr       */
+/*   Updated: 2024/07/03 01:16:00 by javialva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+/*Joins two string in one.*/
 #include "libft.h"
 
 static int	total_len(int i, int len, const char *s1, const char *s2)
@@ -45,17 +46,16 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	result[i + len + 1] = '\0';
 	return (result);
 }
-/* Parametros
--s1: La primera string
--s2: La string a añadir a s1
+/*
+int	main(void)
+{
+	const char	*s1 = "Hola mundo, ";
+	const char	*s2 = "adios mundo.";
+	char	*sjoin;
 
-Valor devuelto 
--La nueva string
--NULL si falla la reserva de memoria
-
-Funciones autorizadas
-malloc
-
-Descripción
-Reserva (con malloc(3)) y devuelve una nueva string formada por 
-la concatenación de 's1' y 's2'. */
+	sjoin = ft_strjoin(s1, s2);
+	printf("%s", sjoin);
+	free(sjoin);
+	return (0);
+}
+*/

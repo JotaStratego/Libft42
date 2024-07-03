@@ -6,9 +6,12 @@
 /*   By: javialva <javialva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 17:34:18 by javialva          #+#    #+#             */
-/*   Updated: 2024/06/26 20:45:45 by javialva         ###   ########.fr       */
+/*   Updated: 2024/07/03 10:16:37 by javialva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+/*Remove all characters from the string 'set' from the beginning and from
+the end of 's1', until find a character not belonging to 'set'. The
+resulting string is returned with a reservation of malloc*/
 #include "libft.h"
 
 static int	ft_removing_chars(char s, char const *set)
@@ -58,14 +61,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (result);
 }
 /*
-Parametros:
--s1: La string que debe ser recortada.
--set: Los caracteres a eliminar de la string.
-Valor devuelto:
-String recortada. Null si falla reserva de memoria.
-Funciones autorizadas: Malloc-
-Descripción:
-Elimina todos los caracteres de la string set desde el principio 
-y desde el final de s1, hasta encontrar un caracter no perteneciente a
-set. La string resultante se devuelve con una reserva de malloc(3).
+int	main(void)
+{
+	const char	*s1 = "Hola a todos";
+	const char	*set = "Hol";
+	char	*result;
+
+	result = ft_strtrim(s1, set);
+	printf("%s", result);
+	free(result);
+	return (0);
+}
 */

@@ -6,9 +6,11 @@
 /*   By: javialva <javialva@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 12:27:18 by javialva          #+#    #+#             */
-/*   Updated: 2024/06/26 20:46:02 by javialva         ###   ########.fr       */
+/*   Updated: 2024/07/03 10:19:09 by javialva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+/*Reserve (with malloc(3)) and return a substring of the string 's'.
+The substring starts from the index 'start' and has a maximum length 'len'.*/
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -30,18 +32,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (ss);
 }
 
-/*Parametros 
-s: String desde la que creas la substring.
-start: Indice del caracter en s desde el que empezar la substring.
-len: longitud maxima de la substring
+/*
+int	main(void)
+{
+	const char	*str = "Hola como estas?";
+	unsigned int	start = 4;
+	size_t	len = 12;
+	char	*substr;
 
-Valor devuelto
-Substring resultante.
-NULL si falla asignacion de memoria.
-
-Funciones autorizadas
-malloc
-
-Descripcion
-Reserva con malloc(3) y devuelve una substring de la string 's'.
-La substring empieza desde el indice start y tiene una long max len. */
+	substr = ft_substr(str, start, len);
+	printf("%s", substr);
+	return (0);
+}
+*/

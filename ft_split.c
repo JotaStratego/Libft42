@@ -6,9 +6,10 @@
 /*   By: javialva <javialva@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 18:46:02 by javialva          #+#    #+#             */
-/*   Updated: 2024/06/26 21:53:05 by javialva         ###   ########.fr       */
+/*   Updated: 2024/07/03 01:02:01 by javialva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+/*Splits a string in substrings with a delimitador*/
 #include "libft.h"
 
 static int	make_malloc(char **vect, size_t index, size_t len)
@@ -96,13 +97,19 @@ char	**ft_split(char const *s, char c)
 }
 
 /*
-* Descriptions of aux functions:
-* count_tokens: counts total words to split.
-* 
-* Pseudocode:
-* 1. Count total words to split.
-* 2. Create array of arrays (vector) and do dinamic memory allocation
-*    with malloc.
-* 3. Check memory allocation problem and make a condition with NULL value.
-* 4. 
+int	main(void)
+{
+	const char	*s = "  Hola a todo el mundo!";
+	char	c = ' ';
+	char	**array;
+	int	i = 0;
+
+	array = ft_split(s, c);
+	while (array[i] != NULL)
+	{
+		printf("%s\n", array[i]);
+		i++;
+	}
+	return (0);
+}
 */
