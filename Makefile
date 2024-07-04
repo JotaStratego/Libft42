@@ -6,7 +6,7 @@
 #    By: javialva <javialva@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/03 10:34:19 by javialva          #+#    #+#              #
-#    Updated: 2024/07/03 11:23:45 by javialva         ###   ########.fr        #
+#    Updated: 2024/07/05 00:13:15 by javialva         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,11 @@ OBJ=$(FT:.c=.o)
 
 CFLAGS=-Wall -Werror -Wextra
 
+BONUS_F=ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c \
+ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
+
+BONUS_O=$(BONUS_F:.c=.o)
+
 all: $(NAME)
 
 $(NAME): $(FT) $(OBJ)
@@ -37,9 +42,11 @@ clean:
 	@rm -f $(OBJ)
 
 fclean: clean
-	@rm -f $(NAME) $(BONUS_OBJ)
+	@rm -f $(NAME) $(BONUS_O)
 
 re: fclean all
 
 %.o: %.c
 	gcc $(CFLAGS) -c $< -o $@
+
+.PHONY: all bonus clean fclean re

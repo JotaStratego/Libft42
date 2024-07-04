@@ -6,7 +6,7 @@
 /*   By: javialva <javialva@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 18:13:46 by javialva          #+#    #+#             */
-/*   Updated: 2024/07/04 23:18:21 by javialva         ###   ########.fr       */
+/*   Updated: 2024/07/04 23:57:51 by javialva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@
 # include <stddef.h>
 # include <unistd.h>
 
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}		t_list;
 int		ft_atoi(const char *nptr);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -54,12 +59,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_strlcat(char *dest, const char *src, size_t n);
 size_t	ft_strlcpy(char *dest, const char *src, size_t n);
 size_t	ft_strlen(const char *str);
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}		t_list;
-tlist	*ft_lstnew(void *content);
-tlist	*ft_lstlast(t_list *lst);
-tlist	*ft_lstmap(t_list *lst, void *(*f)(void *), void *(del)(void *));
+t_list	*ft_lstnew(void *content);
+t_list	*ft_lstlast(t_list *lst);
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 #endif

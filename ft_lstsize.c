@@ -6,10 +6,11 @@
 /*   By: javialva <javialva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 23:19:27 by javialva          #+#    #+#             */
-/*   Updated: 2024/07/04 23:21:14 by javialva         ###   ########.fr       */
+/*   Updated: 2024/07/05 00:02:17 by javialva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*Counts node numbers from list*/
+#include "libft.h"
 
 int	ft_lstsize(t_list *lst)
 {
